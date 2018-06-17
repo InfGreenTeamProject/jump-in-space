@@ -1,10 +1,4 @@
-//
-//  MainScene.hpp
-//  BunnyJump
-//
-//  Created by Anthony on 2/17/17.
-//
-//
+
 
 #ifndef MainScene_h
 #define MainScene_h

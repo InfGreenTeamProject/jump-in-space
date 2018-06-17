@@ -19,7 +19,7 @@ Scene* GameScene::createScene()
 	//scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
 
 	//Increase speed to make things feel snapier
-	scene->getPhysicsWorld()->setSpeed(1.5f);
+	scene->getPhysicsWorld()->setSpeed(2);
 
 	// 'layer' is an autorelease object
 	auto layer = GameScene::create();

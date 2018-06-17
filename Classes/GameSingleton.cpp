@@ -1,10 +1,4 @@
-//
-//  GameSingleton.cpp
-//  BunnyJump
-//
-//  Created by Antoni Remeseiro on 4/2/17.
-//
-//
+
 
 #include "GameSingleton.hpp"
 

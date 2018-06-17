@@ -1,4 +1,3 @@
-//
 
 #ifndef Platform_hpp
 #define Platform_hpp
@@ -8,24 +7,21 @@
 
 using namespace cocos2d;
 
-// Type references the graphics if its grass or metal or what.
 enum class type: char
 {
     cake='c',
     grass='g',
     stone='m',
     sand='S',
-    snow='s', // C++11 allows the extra comma
+    snow='s',
     wood='w',
 };
 
-//Two sizes only. big or small.
 enum class size: char
     {
         smalll='b',
         normal='s',
     };
-//Normal or broken its for graphics but also broken will fall down once you jamp ut of it or on it
 enum class state: char
     {
         normal='n',
@@ -35,34 +31,26 @@ enum class state: char
 class Platform : public cocos2d::Sprite
 {
 public:
-    //Variables
-    //Boolean to know if the platform contains traps or enemies in which case do not add bonuses , coins or other stuff
     bool containsTraps = false;
     
-    //Setters
-    //Setter for type
+   
     void setType(type t) {
         _type = t;
     }
     
-    //Setter for size
     void setSize(size s) {
         _size = s;
     }
     
-    //Setter for state
     void setState(state st) {
         _state = st;
     }
     
-    //Methods
     Platform();
     ~Platform();
     
-    //Create method with options to setup our object
     static Platform* create(type t,size s,state st);
     
-    //Init with settag, physics body , etc
     void initOptions();
 
     //Add decorations to ths platform if suitable

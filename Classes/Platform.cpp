@@ -1,10 +1,4 @@
-//
-//  Platform.cpp
-//  BunnyJump
-//
-//  Created by Antoni Remeseiro on 2/20/17.
-//
-//
+
 
 #include "Platform.hpp"
 

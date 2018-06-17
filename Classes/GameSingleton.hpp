@@ -1,10 +1,3 @@
-//
-//  GameSingleton.hpp
-//  BunnyJump
-//
-//  Created by Antoni Remeseiro on 4/2/17.
-//
-//
 
 #ifndef GameSingleton_hpp
 #define GameSingleton_hpp

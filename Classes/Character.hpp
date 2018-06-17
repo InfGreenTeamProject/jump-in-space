@@ -1,10 +1,4 @@
-//
-//  Character.hpp
-//  BunnyJump
-//
-//  Created by Anthony on 2/17/17.
-//
-//
+
 
 #ifndef Character_hpp
 #define Character_hpp

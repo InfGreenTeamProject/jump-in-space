@@ -1,10 +1,4 @@
-//
-//  GameOverScene.hpp
-//  BunnyJump
-//
-//  Created by Antoni Remeseiro on 4/2/17.
-//
-//
+
 
 #ifndef GameOverScene_hpp
 #define GameOverScene_hpp
