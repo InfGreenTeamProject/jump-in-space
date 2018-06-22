@@ -1,5 +1,3 @@
-
-
 #ifndef MainScene_h
 #define MainScene_h
 
@@ -9,12 +7,12 @@ class MainScene : public cocos2d::Layer
 {
 public:
     static cocos2d::Scene* createScene();
-    
+
     virtual bool init();
-    
+
     // Play Button callback
     void PlayItemCallback(cocos2d::Ref* pSender);
-    
+
     // implement the "static create()" method manually
     CREATE_FUNC(MainScene);
 };

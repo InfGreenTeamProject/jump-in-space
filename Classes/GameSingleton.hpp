@@ -1,4 +1,3 @@
-
 #ifndef GameSingleton_hpp
 #define GameSingleton_hpp
 

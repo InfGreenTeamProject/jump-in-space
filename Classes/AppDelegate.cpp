@@ -1,6 +1,6 @@
 #include "AppDelegate.h"
 #include "MainScene.h"
-
+#include "SplashScreen.h"
 USING_NS_CC;
 
 static cocos2d::Size designResolutionSize = cocos2d::Size(768, 1136);
@@ -12,7 +12,7 @@ AppDelegate::AppDelegate()
 {
 }
 
-AppDelegate::~AppDelegate() 
+AppDelegate::~AppDelegate()
 {
 }
 
@@ -39,15 +39,15 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto glview = director->getOpenGLView();
     if(!glview) {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || (CC_TARGET_PLATFORM == CC_PLATFORM_LINUX)
-        glview = GLViewImpl::createWithRect("JUMP IN SPACE", cocos2d::Rect(0, 0, designResolutionSize.width, designResolutionSize.height));
+        glview = GLViewImpl::createWithRect("BunnyJump", cocos2d::Rect(0, 0, designResolutionSize.width, designResolutionSize.height));
 #else
-        glview = GLViewImpl::create("JUMP IN SPACE");
+        glview = GLViewImpl::create("BunnyJump");
 #endif
         director->setOpenGLView(glview);
     }
 
     // turn on display FPS
-    director->setDisplayStats(false);
+    director->setDisplayStats(true);
 
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0f / 60);
@@ -57,31 +57,31 @@ bool AppDelegate::applicationDidFinishLaunching() {
     /*auto frameSize = glview->getFrameSize();
     // if the frame's height is larger than the height of medium size.
     if (frameSize.height > mediumResolutionSize.height)
-    {        
+    {
         director->setContentScaleFactor(MIN(largeResolutionSize.height/designResolutionSize.height, largeResolutionSize.width/designResolutionSize.width));
     }
     // if the frame's height is larger than the height of small size.
     else if (frameSize.height > smallResolutionSize.height)
-    {        
+    {
         director->setContentScaleFactor(MIN(mediumResolutionSize.height/designResolutionSize.height, mediumResolutionSize.width/designResolutionSize.width));
     }
     // if the frame's height is smaller than the height of medium size.
     else
-    {        
+    {
         director->setContentScaleFactor(MIN(smallResolutionSize.height/designResolutionSize.height, smallResolutionSize.width/designResolutionSize.width));
     }*/
 
     register_all_packages();
-    
+
     //Load Sprite sheet
     // load the Sprite Sheet
     auto spritecache = SpriteFrameCache::getInstance();
-    
+
     // the .plist file can be generated with any of the tools mentioned below
-    spritecache->addSpriteFramesWithFile("spr.plist","spr.png");
+    spritecache->addSpriteFramesWithFile("sprites.plist","sprites.png");
 
     // create a scene. it's an autorelease object
-    auto scene = MainScene::createScene();
+    auto scene = SplashScreen::createScene();
 
     // run
     director->runWithScene(scene);

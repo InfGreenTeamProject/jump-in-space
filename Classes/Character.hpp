@@ -1,5 +1,3 @@
-
-
 #ifndef Character_hpp
 #define Character_hpp
 
@@ -10,46 +8,45 @@ using namespace cocos2d;
 // Gender of the character may be gender::male or gender::female
 enum class gender: char
 {
-    male='m',
-    female='f', // C++11 allows the extra comma
+	male='m',
+	female='f', // C++11 allows the extra comma
 };
 
 class Character : public cocos2d::Sprite
 {
 public:
-    //Variables
-    
-    //Methods
-    Character();
-    ~Character();
-    
-    static Character* create(gender gr);
-   
-    void initOptions();
-    
-    bool isDead();
-	Animation *jumpAnim;
+	//Variables
+
+	//Methods
+	Character();
+	~Character();
+
+	static Character* create(gender gr);
+
+	void initOptions();
+
+	bool isDead();
+
+private:
+
+	//Variables
 	Size _size; //We need to save this for a weird thing. SpriteFrameCache seems to change physics body. So i want to use always same size
 	gender _gender;
-	int genderNum;
-private:
-    
-    //Variables
-    //In the animation the gender has different numbers 1 male , 2 female.
-    
-    //Animation of character
+	int genderNum; //In the animation the gender has different numbers 1 male , 2 female.
 
-    
-    //If its dead do not get input
-    bool dead;
-    //
-    ////Methods
-    //bool onContactBegin(PhysicsContact& contact);
-    //
-    ////Method to make the character jump including the animation
-    //void jump();
-    //
-    //void die();
+	//Animation of character
+	Animation *jumpAnim;
+
+	//If its dead do not get input
+	bool dead;
+
+	//Methods
+	bool onContactBegin(PhysicsContact& contact);
+
+	//Method to make the character jump including the animation
+	void jump();
+
+	void die();
 };
 
 #endif /* Character_hpp */

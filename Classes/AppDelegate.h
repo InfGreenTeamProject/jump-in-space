@@ -3,6 +3,11 @@
 
 #include "cocos2d.h"
 
+/**
+@brief    The cocos2d Application.
+
+Private inheritance here hides part of interface from Director.
+*/
 class  AppDelegate : private cocos2d::Application
 {
 public:
@@ -13,7 +18,7 @@ public:
 
     /**
     @brief    Implement Director and Scene init code here.
-    @return false    Initialize success, app continue.
+    @return true    Initialize success, app continue.
     @return false   Initialize failed, app terminate.
     */
     virtual bool applicationDidFinishLaunching();

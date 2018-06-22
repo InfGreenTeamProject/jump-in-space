@@ -1,5 +1,3 @@
-
-
 #include "GameSingleton.hpp"
 
 //USING_NS_CC;

@@ -1,12 +1,8 @@
 #include "GameScene.h"
 #include "SimpleAudioEngine.h"
-
 #include "Constants.h"
-
 #include "GameSingleton.hpp"
-
 #include "GameOverScene.hpp"
-
 #include <stdlib.h> //For rand()
 
 USING_NS_CC;
@@ -16,10 +12,10 @@ Scene* GameScene::createScene()
 	// 'scene' is an autorelease object
 	auto scene = Scene::createWithPhysics();
 
-	//scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
+	scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
 
 	//Increase speed to make things feel snapier
-	scene->getPhysicsWorld()->setSpeed(2);
+	scene->getPhysicsWorld()->setSpeed(2.5f);
 
 	// 'layer' is an autorelease object
 	auto layer = GameScene::create();
@@ -36,7 +32,7 @@ bool GameScene::init()
 {
 	//////////////////////////////
 	// 1. super init first
-	if (!Layer::init())
+	if ( !Layer::init() )
 	{
 		return false;
 	}
@@ -56,12 +52,12 @@ bool GameScene::init()
 	level = Node::create();
 	//Because level position is set at origin we do not need to use origin again in any object that will go inside level
 	level->setPosition(Vec2(origin.x, origin.y));
-	this->addChild(level, 1);
+	this->addChild(level,1);
 
 	//Create the node platforms to hold all the platforms inside this is to locate them easyly
 	platforms = Node::create();
-	platforms->setPosition(Vec2(0, 0));
-	level->addChild(platforms, 1);
+	platforms->setPosition(Vec2(0,0));
+	level->addChild(platforms,1);
 
 	// add "Backgrounds" they go one in top of the other one in layers
 	auto bkg1 = Sprite::create("bg_layer1.png");
@@ -69,16 +65,15 @@ bool GameScene::init()
 	auto bkg3 = Sprite::create("bg_layer3.png");
 	auto bkg4 = Sprite::create("bg_layer4.png");
 
-
 	// position the sprite on the center of the screen
-	bkg1->setPosition(Vec2(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2));
-	bkg2->setPosition(Vec2(visibleSize.width / 2, visibleSize.height / 2));
-	bkg3->setPosition(Vec2(visibleSize.width / 2, visibleSize.height / 2));
-	bkg4->setPosition(Vec2(visibleSize.width / 2, visibleSize.height / 2));
+	bkg1->setPosition(Vec2(origin.x + visibleSize.width/2, origin.y + visibleSize.height/2));
+	bkg2->setPosition(Vec2(visibleSize.width/2, visibleSize.height/2));
+	bkg3->setPosition(Vec2(visibleSize.width/2, visibleSize.height/2));
+	bkg4->setPosition(Vec2(visibleSize.width/2, visibleSize.height/2));
 
 	// add the sprite as a child to this layer
 	this->addChild(bkg1, 0); //Add backround in the normal node so always stays
-							 //This go in level so they will move with it creating the illusion of moving up
+	//This go in level so they will move with it creating the illusion of moving up
 	level->addChild(bkg2, 0);
 	level->addChild(bkg3, 0);
 	level->addChild(bkg4, 0);
@@ -86,21 +81,21 @@ bool GameScene::init()
 	//Load character from spritecache
 	character = Character::create(gender::male);
 	character->setAnchorPoint(Vec2(0.5, 0.5));
-	character->setPosition(Vec2(visibleSize.width / 2, visibleSize.height*0.15));
+	character->setPosition(Vec2(visibleSize.width/2 , visibleSize.height*0.15));
 
-	level->addChild(character, 5);
+	level->addChild(character,5);
 
 	//Create UI
 	scoreLabel = Label::createWithTTF("0m", "fonts/KenVector Future.ttf", 32);
 
-	scoreLabel->setAnchorPoint(Vec2(0.5, 0.5));
+	scoreLabel->setAnchorPoint(Vec2( 0.5, 0.5 ));
 
 	// position the label on the center of the screen
-	scoreLabel->setPosition(Vec2(origin.x + visibleSize.width / 2,
-		origin.y + visibleSize.height*0.95));
+	scoreLabel->setPosition(Vec2(origin.x + visibleSize.width/2,
+								 origin.y + visibleSize.height*0.95));
 
 	scoreLabel->setTextColor(Color4B::WHITE);
-	scoreLabel->enableOutline(Color4B(67, 67, 67, 255), 2);
+	scoreLabel->enableOutline(Color4B(67,67,67,255),2);
 
 	// add the label as a child to this layer
 	this->addChild(scoreLabel, 15);
@@ -124,14 +119,10 @@ bool GameScene::init()
 	//Schedule the update
 	this->scheduleUpdate();
 
-
-	auto contactListener = EventListenerPhysicsContact::create();
-	contactListener->onContactBegin = CC_CALLBACK_1(GameScene::onContactBegin, this);
-	_eventDispatcher->addEventListenerWithSceneGraphPriority(contactListener, this);
 	return true;
 }
 
-void GameScene::instantiateInitialPlatforms() {
+void GameScene::instantiateInitialPlatforms () {
 
 	//Always create one platform beneath the player for an easy start
 	Platform* p = Platform::create(PlatformType, size::normal, state::normal);
@@ -143,7 +134,7 @@ void GameScene::instantiateInitialPlatforms() {
 	p->setTag(kInitialPlatformTag);
 
 	//Position the first one right beneath the hero to make it an easy start
-	p->setPosition(Vec2(character->getPositionX() - origin.x, character->getPositionY() - character->getContentSize().height - origin.y));
+	p->setPosition(Vec2(character->getPositionX()-origin.x,character->getPositionY()-character->getContentSize().height-origin.y));
 
 	//Save this for next platform
 	currentPlatformTag = kInitialPlatformTag;
@@ -151,10 +142,10 @@ void GameScene::instantiateInitialPlatforms() {
 	lastPlatformYPosition = p->getPositionY();
 
 	//Add to platfroms node
-	platforms->addChild(p, 0);
+	platforms->addChild(p,0);
 
 	//This is a group always the same of platforms so player can never fall at the begining
-	while (currentPlatformTag < (kInitialPlatformTag + kNumPlatforms)) {
+	while(currentPlatformTag < (kInitialPlatformTag+kNumPlatforms) ) {
 		instantiatePlatform();
 	}
 }
@@ -167,32 +158,34 @@ void GameScene::instantiatePlatform() {
 
 	//Create platforms
 	size platformSize = size::normal;
+    type platformType = type::grass;
 
 	//Here we will add different random elements to start randomizing and increasing difficulty of level
-	if (score>250) {
+	if(score>250) {
 		//This from time to time therell bee a small platform
 		int p = RandomHelper::random_int(1, 3); //Modifie the max for less chance or more chance
-		if (p == 1) {
+		if( p == 1) {
 			platformSize = size::smalll;
+            platformType = type::grass;
 		}
 	}
 
 	//After 1000 we will start increasing the distance between platform to a limit
-	if (score > 500) {
+	if(score > 500) {
 		//Increase the min step by Platfrom Step Increase constant
 		minPlatformModifier = minPlatformModifier + kPlatformStepIncrease;
 
 		//Control that the min step doesnt surpas the max step
-		if (minPlatformModifier > (kMaxPlatformStep - kMinPlatformStep)) {
+		if(minPlatformModifier > (kMaxPlatformStep-kMinPlatformStep)) {
 			//If its bigger we will do minPlatformModifier to be kMaxStep - kMinStep (200-50=150) so now platforms will be between 200 and 150
-			minPlatformModifier = (kMaxPlatformStep - kMinPlatformStep);
+			minPlatformModifier = (kMaxPlatformStep-kMinPlatformStep);
 		}
 	}
 
 	//Create the platform with whatever parameters we get
-	p = Platform::create(PlatformType, platformSize, state::normal);
+	Platform* p = Platform::create(platformType, platformSize,state::normal);
 	//Add properties of the platform.
-	p->setType(PlatformType);
+	p->setType(platformType);
 	p->setSize(platformSize);
 	p->setState(state::normal);
 
@@ -200,20 +193,23 @@ void GameScene::instantiatePlatform() {
 	p->setAnchorPoint(Vec2(0.5, 0.5));
 
 	state thestate = p->getState();
-	CCLOG("State %d", static_cast<int>(thestate));
+	CCLOG("State %d",static_cast<int>(thestate));
 
 	//Set the tag. The tags will be rotating among the platforms so
-	int tag = currentPlatformTag + 1;
+	int tag = currentPlatformTag+1;
 	//if(tag > kInitialPlatformTag+kNumPlatforms) {
 	//tag = kInitialPlatformTag;
 	//}
 	p->setTag(tag); //Increase the tag
-					//Random positioning helper variables
+	//Random positioning helper variables
 
-					//We add decoration
+	//We add decoration
+	if(RandomHelper::random_int(1, 3) == 1) {
+		p->AddDecorations();
+	}
 
 	//Get a position being x random in screen and y random inside a certain margin so we can always reach
-	float randX = RandomHelper::random_real((p->getContentSize().width / 2), (visibleSize.width - p->getContentSize().width / 2));
+	float randX = RandomHelper::random_real((p->getContentSize().width/2), (visibleSize.width - p->getContentSize().width/2));
 	//This is the separation between this platform and last one instantiated we need to control this so always can be reached
 	float randYRange = RandomHelper::random_real((float)minPlatformModifier, (float)kMaxPlatformStep);
 	//Position it on top of last platform with the increased step
@@ -227,9 +223,13 @@ void GameScene::instantiatePlatform() {
 	lastPlatformYPosition = p->getPositionY();
 
 	//Modify created platforms
+	if(score > 0 && platformSize == size::normal) {
+		//From time to time introduce spiked
+		p->AddSpikes();
+	}
 
 	//finally add it to platforms node
-	platforms->addChild(p, 0);
+	platforms->addChild(p,0);
 }
 
 
@@ -237,14 +237,13 @@ void GameScene::update(float dt)
 {
 	//Character movement
 	//If gets to the edge spawns on the other side of the screen
-	if (!this->isDead()) {
-		if (character->getPositionX() < 0 && character->getPhysicsBody()->getVelocity().x < 0) {
+	if(!character->isDead()) {
+		if(character->getPositionX() < 0 && character->getPhysicsBody()->getVelocity().x < 0) {
 			//Character is moving left and passed the left edge so spawn on the other side
 			Vec2 pos = character->getPosition();
 			pos.x = visibleSize.width; //The coordinate of the other side of the scree
 			character->setPosition(pos);
-		}
-		else if (character->getPositionX() > visibleSize.width && character->getPhysicsBody()->getVelocity().x > 0) {
+		} else if(character->getPositionX() > visibleSize.width && character->getPhysicsBody()->getVelocity().x > 0) {
 			//Character moving to the right and left the edge so spawn on the other side
 			Vec2 pos = character->getPosition();
 			pos.x = 0; //The coordinate of the other side of the scree
@@ -258,63 +257,49 @@ void GameScene::update(float dt)
 	//CCLOG("Char Position %f",characterPos.y);
 
 	//Move node down if character avobe half screen
-	if (characterPos.y > visibleSize.height / 2) {
+	if(characterPos.y > visibleSize.height/2) {
 		Vec2 pos = level->getPosition();
 		pos.y -= ((float)scrollSpeed);
 		level->setPosition(pos);
 	}
 
 	//Score
-	score = std::abs(level->getPositionY() / 3);
+	score = std::abs(level->getPositionY()/3);
 	score *= 1; //To make it positive
-	char s[100] = { 0 };
-	sprintf(s, "%im", (int)score);
-	scoreLabel->setString(s);
+	char s[100] = {0};
+	sprintf(s, "%im", (int) score);
+	scoreLabel->setString (s);
 
 	//If characterpos.y its < 0 means the character fell on the screen so game over
-	if (characterPos.y < 0) {
+	if(characterPos.y < 0) {
 		CCLOG("GAME OVER");
 		//Save score to pass to game over scene
 		GameSingleton::getInstance()->setGameScore(score);
 
 		//Go to game over scene
-		Director::getInstance()->replaceScene(TransitionFade::create(0.5, GameOverScene::createScene(), Color3B(67, 67, 67)));
+		Director::getInstance()->replaceScene(TransitionFade::create(0.5, GameOverScene::createScene(score), Color3B(67,67,67)));
 	}
 
-
-	float randX = RandomHelper::random_real((p->getContentSize().width / 2), (visibleSize.width - p->getContentSize().width / 2));
-	//This is the separation between this platform and last one instantiated we need to control this so always can be reached
-	float randYRange = RandomHelper::random_real((float)minPlatformModifier, (float)kMaxPlatformStep);
-	//Position it on top of last platform with the increased step
-	lastPlatformYPosition = p->getPositionY();
-
-
 	//Go trhough the platforms and respawn platforms out of the screen at the bottom for newer ones on top
-	for (const auto &child : platforms->getChildren())
+	for(const auto &child : platforms->getChildren())
 	{
-
-		float randY = lastPlatformYPosition + randYRange;
-
 		//Get position relative to screen if its negative we need to reset that platform
 		Vec2 platformPos;
 		platformPos = platforms->convertToWorldSpace(child->getPosition());
 
 		//To avoid poping effect (things dissapeareing in the screen) i added to the y the height of the platform.
 		//This way we make sure we do not delet the platform until the platform its not on the screen. I added ful heigh to have more room.
-		if ((platformPos.y + child->getContentSize().height) < 0) {
+		if((platformPos.y+child->getContentSize().height) < 0) {
 			//Platform need to be reseted
 			int platformTag = child->getTag();
-			child->setPosition(Vec2(randX, randY));
 
 			//Remove this chilg and instantiate a new platform
-			// child->removeFromParentAndCleanup(true);
-			//platforms->removeChildByTag(platformTag);
+			child->removeFromParentAndCleanup(true);
+
 			//Instantiate the new platform
-			//platforms->child
-			// instantiatePlatform();
+			instantiatePlatform();
 
 		}
-		lastPlatformYPosition = child->getPosition().y;
 	}
 }
 
@@ -341,19 +326,18 @@ bool GameScene::onTouchBegan(Touch* touch, Event* event)
 
 	Vec2 p = touch->getLocation();
 
-	if (p.x > visibleSize.width / 2 - origin.x) {
+	if(p.x > visibleSize.width/2-origin.x) {
 		//Get velocity Y and get float from constant
 		float VelY = character->getPhysicsBody()->getVelocity().y;
-		float velX = (float)kCharacterXVelocity;
+		float velX = (float) kCharacterXVelocity;
 		//Assign new velocity
 		character->getPhysicsBody()->setVelocity(Vec2(velX, VelY));
-	}
-	else {
+	} else {
 		//Get velocity Y and get float from constant
 		float VelY = character->getPhysicsBody()->getVelocity().y;
-		float velX = (float)kCharacterXVelocity;
+		float velX = (float) kCharacterXVelocity;
 		velX = velX * -1; //Negative X velocity to move to left
-						  //Assign new velocity
+		//Assign new velocity
 		character->getPhysicsBody()->setVelocity(Vec2(velX, VelY));
 	}
 
@@ -367,133 +351,4 @@ void GameScene::onTouchEnded(Touch* touch, Event* event) {
 	float VelY = character->getPhysicsBody()->getVelocity().y;
 	character->getPhysicsBody()->setVelocity(Vec2(0, VelY));
 
-}
-bool GameScene::onContactBegin(cocos2d::PhysicsContact& contact)
-{
-	//If its dead ignore everything
-	if (dead) {
-		return false;
-	}
-
-	auto nodeA = contact.getShapeA()->getBody()->getNode();
-	auto nodeB = contact.getShapeB()->getBody()->getNode();
-
-	//by default its fallin
-	bool makeContact = true;
-
-	if (nodeA && nodeB)
-	{
-		if (nodeA->getName() == "Character" && nodeB->getName() == "Platform")
-		{
-			//Get the platform object
-			Platform* p = (Platform*)nodeB;
-			if (p->isBroken()) {
-				//Its a broken platform so need to break it
-				CCLOG("%s", "Platform its broken so break it.");
-			}
-
-			//Apply Impulse to jump up if necessary
-			Vec2 vel = nodeA->getPhysicsBody()->getVelocity();
-			//If velocity its negative as faling then apply impulse if not just let it alone
-			if (vel.y < 0) {
-				//Falling
-				makeContact = true;
-				//Make the character jump and animate it
-				this->jump();
-			}
-			else {
-				//We dont do anything and let it go through
-				makeContact = false;
-			}
-		}
-		else if (nodeB->getName() == "Character" && nodeA->getName() == "Platform")
-		{
-			//Get the platform object
-			Platform* p = (Platform*)nodeA;
-
-			if (p->isBroken()) {
-				//Its a broken platform so need to break it
-				CCLOG("%s", "Platform its broken so break it.");
-			}
-			CCLOG("it works");
-			//Apply Impulse to jump up if necessary
-			Vec2 vel = nodeB->getPhysicsBody()->getVelocity();
-			if (vel.y < 0) {
-				//Falling
-				makeContact = true;
-				//Make the character jump and animate it
-				this->jump();
-			}
-			else {
-				//We dont do anything and let it go through
-				makeContact = false;
-			}
-		}
-		else if (nodeA->getName() == "Character" && nodeB->getName() == "Spikes") {
-
-			//Pass through spikes no matter direction
-			makeContact = false;
-
-			//Checking for spikes
-			Vec2 vel = nodeA->getPhysicsBody()->getVelocity();
-			CCLOG("Hello");
-			//If velocity its negative as faling then apply impulse if not just let it alone
-			if (vel.y < 0 && nodeB->getTag() == kTopSpikeTag) {
-				//Falling on spikes
-				this->die();
-			}
-			else if (vel.y > 0 && nodeB->getTag() == kBottomSpikeTag) {
-				//Hitting on spikes on jump
-				this->die();
-			}
-		}
-		else if (nodeB->getName() == "Character" && nodeA->getName() == "Spikes") {
-			//Pass through spikes no matter direction
-			makeContact = false;
-			CCLOG("kurwa");
-			//Checking for spikes
-			Vec2 vel = nodeB->getPhysicsBody()->getVelocity();
-			//If velocity its negative as faling then apply impulse if not just let it alone
-			if (vel.y < 0 && nodeA->getTag() == kTopSpikeTag) {
-				//Falling on spikes
-				this->die();
-			}
-			else if (vel.y > 0 && nodeA->getTag() == kBottomSpikeTag) {
-				//Hitting on spikes on jump
-				this->die();
-			}
-		}
-	}
-
-	//bodies can collide
-	return makeContact;
-}
-void GameScene::jump() {
-	if (!dead) {
-		//Animate the character
-		//We dont really have a big spritesheet of the character being animated so we will use actions and time outs
-		//to change some sprites to give it some life
-		character->runAction(Animate::create(character->jumpAnim));
-
-		//Apply velocity
-		Vec2 vel = character->getPhysicsBody()->getVelocity();
-		vel.y = kNormalJumpForce;//upwards - don't change x velocity
-		character->getPhysicsBody()->setVelocity(vel);
-	}
-}
-void GameScene::die() {
-	CCLOG("Player is DEAD");
-	//Mark as dead
-	dead = true;
-	//As animation we will change sprite and apply a short impulse up
-	this->character->setSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName("hero.png"));
-
-	//Finally add the impulse up
-	Vec2 vel = this->getPhysicsBody()->getVelocity();
-	vel.y = kNormalJumpForce;//upwards - don't change x velocity
-	this->getPhysicsBody()->setVelocity(vel);
-}
-bool GameScene::isDead() {
-	//Tell others if character is dead. Useful for movement for example
-	return dead;
 }
