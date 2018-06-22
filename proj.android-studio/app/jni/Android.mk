@@ -19,7 +19,8 @@ LOCAL_SRC_FILES := $(LOCAL_PATH)/hellocpp/main.cpp \
                    $(LOCAL_PATH)/../../../Classes/GameSingleton.cpp \
                    $(LOCAL_PATH)/../../../Classes/HelloWorldScene.cpp \
                    $(LOCAL_PATH)/../../../Classes/MainScene.cpp \
-                   $(LOCAL_PATH)/../../../Classes/Platform.cpp
+                   $(LOCAL_PATH)/../../../Classes/Platform.cpp \
+                   $(LOCAL_PATH)/../../../Classes/SplashScreen.cpp
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../../Classes
 
