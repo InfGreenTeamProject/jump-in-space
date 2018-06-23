@@ -112,7 +112,7 @@ bool GameScene::init()
 	listener->onTouchBegan = CC_CALLBACK_2(GameScene::onTouchBegan, this);
 	//Event for touch ended
 	listener->onTouchEnded = CC_CALLBACK_2(GameScene::onTouchEnded, this);
-
+	listener->onTouchMoved = CC_CALLBACK_2(GameScene::onTouchMoved, this);
 	//Adding listener to events dispatcher
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
 
@@ -344,6 +344,26 @@ bool GameScene::onTouchBegan(Touch* touch, Event* event)
 	return true;
 }
 
+void GameScene::onTouchMoved (Touch* touch, Event* event) {
+	CCLOG("moved");
+	Vec2 p = touch->getLocation();
+	if (p.x > visibleSize.width / 2 - origin.x) {
+		//Get velocity Y and get float from constant
+		float VelY = character->getPhysicsBody()->getVelocity().y;
+		float velX = (float)kCharacterXVelocity;
+		//Assign new velocity
+		character->getPhysicsBody()->setVelocity(Vec2(velX, VelY));
+	}
+	else {
+		//Get velocity Y and get float from constant
+		float VelY = character->getPhysicsBody()->getVelocity().y;
+		float velX = (float)kCharacterXVelocity;
+		velX = velX * -1; //Negative X velocity to move to left
+						  //Assign new velocity
+		character->getPhysicsBody()->setVelocity(Vec2(velX, VelY));
+	}
+
+}
 void GameScene::onTouchEnded(Touch* touch, Event* event) {
 
 	CCLOG("Not touching");

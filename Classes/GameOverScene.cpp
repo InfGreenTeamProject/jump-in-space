@@ -87,18 +87,21 @@ bool GameOverScene::init()
 
 	unsigned int OurRecordScore = UserDefault::getInstance()->getIntegerForKey("Record", 0);
 
-	if (ourScore > OurRecordScore) {
+	
+	if (ourScore >= OurRecordScore) {
 		UserDefault::getInstance()->setIntegerForKey("Record", ourScore);
 	}
+	
 	CCLOG("%i", OurRecordScore);
-
+	UserDefault::getInstance()->flush();
 	//label with  record
-	__String *recordScore = __String::createWithFormat("%i", OurRecordScore);
-
+	
+	__String *recordScore = __String::createWithFormat("%i",  UserDefault::getInstance()->getIntegerForKey("Record"));
 	auto RecordScore = LabelTTF::create(recordScore->getCString(), "fonts/Marker Felt.ttf", visibleSize.height * 0.1);
 	RecordScore->setPosition(Point(visibleSize.width * 0.75 + origin.x, visibleSize.height / 2 + origin.y));
 	RecordScore->setColor(Color3B::RED);
 	this->addChild(RecordScore);
+	
 
     //Play Button now
     auto Playbutton = cocos2d::ui::Button::create("green_button00.png", "green_button01.png", "grey_button00.png");
