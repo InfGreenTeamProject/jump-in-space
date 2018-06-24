@@ -80,8 +80,8 @@ bool GameOverScene::init()
 	//label with  score
 	__String *tempScore = __String::createWithFormat("%i", ourScore);
 
-	auto currentScore = LabelTTF::create(tempScore->getCString(), "fonts/Marker Felt.ttf", visibleSize.height * 0.1);
-	currentScore->setPosition(Point(visibleSize.width * 0.25 + origin.x, visibleSize.height / 2 + origin.y));
+	auto currentScore = LabelTTF::create(tempScore->getCString(), "fonts/KenVector Bold.ttf", 40);
+	currentScore->setPosition(Point(visibleSize.width * 0.25 + origin.x, visibleSize.height * 0.25 + origin.y));
 
 	this->addChild(currentScore);
 
@@ -97,17 +97,13 @@ bool GameOverScene::init()
 	//label with  record
 	
 	__String *recordScore = __String::createWithFormat("%i",  UserDefault::getInstance()->getIntegerForKey("Record"));
-	auto RecordScore = LabelTTF::create(recordScore->getCString(), "fonts/Marker Felt.ttf", visibleSize.height * 0.1);
-	RecordScore->setPosition(Point(visibleSize.width * 0.75 + origin.x, visibleSize.height / 2 + origin.y));
+	auto RecordScore = LabelTTF::create(recordScore->getCString(), "fonts/KenVector Bold.ttf", 40);
+	RecordScore->setPosition(Point(visibleSize.width * 0.75 + origin.x, visibleSize.height * 0.25 + origin.y));
 	RecordScore->setColor(Color3B::RED);
 	this->addChild(RecordScore);
 	
-
-    //Play Button now
-    auto Playbutton = cocos2d::ui::Button::create("green_button00.png", "green_button01.png", "grey_button00.png");
-    Playbutton->setTitleText("Replay");
-    Playbutton->setTitleFontName("fonts/KenVector Future.ttf");
-    Playbutton->setTitleFontSize(24);
+auto Playbutton = cocos2d::ui::Button::create("r1.png", "r2.png");
+    Playbutton->setScale(0.2);
     Playbutton->setPosition(Vec2(origin.x + visibleSize.width/2 , origin.y + visibleSize.height/2));
     Playbutton->addTouchEventListener([&](Ref* sender, cocos2d::ui::Widget::TouchEventType type){
         switch (type)

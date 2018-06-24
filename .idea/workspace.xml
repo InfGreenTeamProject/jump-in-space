@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="286f1d0e-110e-4bd8-acda-a9fbf1f96813" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jump-in-space.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proj.ios_mac/MyGame.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
+    <list default="true" id="286f1d0e-110e-4bd8-acda-a9fbf1f96813" name="Default" comment="new">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Classes/AppDelegate.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/AppDelegate.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/Character.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/Character.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes/AppDelegate.h" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/AppDelegate.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes/GameOverScene.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/GameOverScene.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Classes/GameScene.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/GameScene.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/Platform.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/Platform.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/Platform.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/Platform.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes/MainScene.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/MainScene.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/debug/android/MyGame-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/bin/debug/android/MyGame-debug.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cocos2d/build/cocos2d_libs.xcodeproj/xcuserdata/vladsnif.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/cocos2d/build/cocos2d_libs.xcodeproj/xcuserdata/vladsnif.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cocos2d/cocos/platform/android/libcocos2dx/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/cocos2d/cocos/platform/android/libcocos2dx/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cocos2d/cocos/platform/android/libcocos2dx/build/intermediates/incremental/packageReleaseResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/cocos2d/cocos/platform/android/libcocos2dx/build/intermediates/incremental/packageReleaseResources/compile-file-map.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj.ios_mac/MyGame.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/proj.ios_mac/MyGame.xcodeproj/project.pbxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proj.ios_mac/MyGame.xcodeproj/project.xcworkspace/xcuserdata/vladsnif.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/proj.ios_mac/MyGame.xcodeproj/project.xcworkspace/xcuserdata/vladsnif.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proj.ios_mac/MyGame.xcodeproj/xcuserdata/vladsnif.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/proj.ios_mac/MyGame.xcodeproj/xcuserdata/vladsnif.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj.ios_mac/ios/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/proj.ios_mac/ios/Info.plist" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,73 +38,103 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainScene.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Classes/MainScene.h">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="GameScene.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Classes/GameScene.cpp">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="GameScene.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Classes/GameScene.h">
+      <file leaf-file-name="Character.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Classes/Character.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-772" />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameSingleton.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Classes/GameSingleton.cpp">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="Platform.hpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Classes/Platform.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="66" selection-start-line="66" selection-end-line="66" />
+            <state relative-caret-position="3855">
+              <caret line="257" column="22" selection-start-line="257" selection-start-column="19" selection-end-line="257" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameSingleton.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Classes/GameSingleton.hpp">
+      <file leaf-file-name="AppDelegate.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Classes/AppDelegate.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="343">
+              <caret line="45" column="40" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameScene.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Classes/GameScene.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Constants.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Classes/Constants.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="18" column="52" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SplashScreen.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Classes/SplashScreen.cpp">
           <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="GameSingleton.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Classes/GameSingleton.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="6" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppDelegate.h" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Classes/AppDelegate.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="186">
+              <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="HelloWorldScene.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Classes/HelloWorldScene.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1375" />
+            <state relative-caret-position="128">
+              <caret line="97" column="30" selection-start-line="97" selection-start-column="27" selection-end-line="97" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainScene.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Classes/MainScene.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="72" column="28" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="28" />
+            </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Platform.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Classes/Platform.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2335">
-              <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HelloWorldScene.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Classes/HelloWorldScene.h">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="MainScene.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Classes/MainScene.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-100">
-              <caret line="78" column="82" selection-start-line="78" selection-start-column="82" selection-end-line="78" selection-end-column="82" />
+            <state relative-caret-position="128">
+              <caret line="66" column="8" selection-start-line="66" selection-start-column="6" selection-end-line="66" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>world</find>
+      <find>phy</find>
+      <find>wor</find>
+      <find>a</find>
+      <find>ph</find>
+      <find>all</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -136,6 +159,10 @@
         <option value="$PROJECT_DIR$/Classes/Character.cpp" />
         <option value="$PROJECT_DIR$/Classes/AppDelegate.cpp" />
         <option value="$PROJECT_DIR$/Classes/Platform.hpp" />
+        <option value="$PROJECT_DIR$/Classes/MainScene.cpp" />
+        <option value="$PROJECT_DIR$/Classes/GameOverScene.cpp" />
+        <option value="$PROJECT_DIR$/Classes/GameScene.cpp" />
+        <option value="$PROJECT_DIR$/Classes/AppDelegate.h" />
       </list>
     </option>
   </component>
@@ -178,16 +205,6 @@
               <item name="jump-in-space" type="b2602c69:ProjectViewProjectNode" />
               <item name="jump-in-space" type="462c0819:PsiDirectoryNode" />
               <item name="Classes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jump-in-space" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jump-in-space" type="462c0819:PsiDirectoryNode" />
-              <item name="cocos2d" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jump-in-space" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jump-in-space" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -277,18 +294,26 @@
       <workItem from="1529785133903" duration="2480000" />
       <workItem from="1529871655328" duration="1662000" />
       <workItem from="1529873358476" duration="138000" />
-      <workItem from="1529873535326" duration="1566000" />
+      <workItem from="1529873535326" duration="4840000" />
     </task>
+    <task id="LOCAL-00001" summary="add uor sprites">
+      <created>1529875817901</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1529875817902</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5846000" />
+    <option name="totallyTimeSpent" value="9120000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1366" height="745" extended-state="0" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Android Profiler" order="7" />
+      <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" />
       <window_info id="Build Variants" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.32930514" />
@@ -346,6 +371,13 @@
                       </list>
                     </value>
                   </entry>
+                  <entry key="text">
+                    <value>
+                      <list>
+                        <option value="" />
+                      </list>
+                    </value>
+                  </entry>
                 </map>
               </option>
               <option name="COLUMN_ORDER">
@@ -364,6 +396,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add uor sprites" />
+    <option name="LAST_COMMIT_MESSAGE" value="add uor sprites" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -472,11 +508,6 @@
     <entry file="file://$PROJECT_DIR$/Resources/spr.plist">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/SplashScreen.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-404" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Classes/SplashScreen.h">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -486,84 +517,113 @@
     <entry file="file://$PROJECT_DIR$/Resources/spriter.tps">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/AppDelegate.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="93" column="51" lean-forward="true" selection-start-line="93" selection-start-column="51" selection-end-line="93" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/AppDelegate.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-268" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/Character.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1495">
-          <caret line="148" column="46" selection-start-line="148" selection-start-column="46" selection-end-line="148" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/Character.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-401" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/Constants.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-97" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/GameOverScene.cpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/GameOverScene.hpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/GameScene.cpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/GameScene.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-772" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/GameSingleton.cpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/GameSingleton.hpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/HelloWorldScene.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1375" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Classes/HelloWorldScene.h">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/MainScene.cpp">
+    <entry file="file://$PROJECT_DIR$/Classes/GameOverScene.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-100">
-          <caret line="78" column="82" selection-start-line="78" selection-start-column="82" selection-end-line="78" selection-end-column="82" />
+        <state>
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Classes/GameSingleton.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Classes/MainScene.h">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/Platform.cpp">
+    <entry file="file://$PROJECT_DIR$/Classes/Platform.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2335">
-          <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+        <state relative-caret-position="-187">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/Platform.hpp">
+    <entry file="file://$PROJECT_DIR$/Classes/Character.hpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Classes/GameOverScene.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="66" selection-start-line="66" selection-end-line="66" />
+        <state relative-caret-position="128">
+          <caret line="104" column="51" selection-start-line="104" selection-start-column="51" selection-end-line="104" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Classes/GameScene.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Classes/GameSingleton.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Classes/HelloWorldScene.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="97" column="30" selection-start-line="97" selection-start-column="27" selection-end-line="97" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Classes/MainScene.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="72" column="28" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Classes/Platform.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="66" column="8" selection-start-line="66" selection-start-column="6" selection-end-line="66" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Classes/SplashScreen.cpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Classes/Character.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3855">
+          <caret line="257" column="22" selection-start-line="257" selection-start-column="19" selection-end-line="257" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Classes/GameScene.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Classes/Constants.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="18" column="52" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Classes/AppDelegate.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="45" column="40" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Classes/AppDelegate.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
         </state>
       </provider>
     </entry>

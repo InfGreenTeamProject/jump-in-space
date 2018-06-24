@@ -12,7 +12,7 @@ Scene* GameScene::createScene()
 	// 'scene' is an autorelease object
 	auto scene = Scene::createWithPhysics();
 
-	scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
+	//scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
 
 	//Increase speed to make things feel snapier
 	scene->getPhysicsWorld()->setSpeed(2.5f);
