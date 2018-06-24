@@ -79,6 +79,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // the .plist file can be generated with any of the tools mentioned below
     spritecache->addSpriteFramesWithFile("sprites.plist","sprites.png");
+    spritecache->addSpriteFramesWithFile("spr.plist","spr.png");
 
     // create a scene. it's an autorelease object
     auto scene = SplashScreen::createScene();

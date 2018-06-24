@@ -12,18 +12,7 @@ Character::~Character() {}
 Character* Character::create(gender gr)
 {
     std::string _sprite;
-    switch (gr) {
-        case gender::male:
-            _sprite = "bunny1_jump.png";
-            break;
-        case gender::female:
-            _sprite = "bunny2_jump.png";
-            break;
-        default:
-            _sprite = "bunny1_jump.png";
-            break;
-    }
-
+     _sprite = "hero.png";
     //Get the spriteFrameFirst
     SpriteFrame *frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(_sprite);
 
@@ -101,15 +90,15 @@ void Character::initOptions()
     //Generate the frames using the spritnf to change between female and male
 
     //Stand
-    snprintf(buff, sizeof(buff), "bunny%d_stand.png", genderNum);
+    snprintf(buff, sizeof(buff), "hero.png", genderNum);
     auto frameStand = SpriteFrameCache::getInstance()->getSpriteFrameByName(buff);
 
     //Ready
-    snprintf(buff, sizeof(buff), "bunny%d_ready.png", genderNum);
+    snprintf(buff, sizeof(buff), "hero.png", genderNum);
     auto frameReady = SpriteFrameCache::getInstance()->getSpriteFrameByName(buff);
 
     //Jump
-    snprintf(buff, sizeof(buff), "bunny%d_jump.png", genderNum);
+    snprintf(buff, sizeof(buff), "hero4.png", genderNum);
     auto frameJump = SpriteFrameCache::getInstance()->getSpriteFrameByName(buff);
 
     /*
@@ -157,7 +146,7 @@ void Character::die() {
     dead = true;
     char sprite[100] = {0};
     //As animation we will change sprite and apply a short impulse up
-    snprintf(sprite, sizeof(sprite), "bunny%d_hurt.png", genderNum);
+    snprintf(sprite, sizeof(sprite), "hero.png", genderNum);
     this->setSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName(sprite));
 
     //Finally add the impulse up

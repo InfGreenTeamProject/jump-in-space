@@ -204,9 +204,6 @@ void GameScene::instantiatePlatform() {
 	//Random positioning helper variables
 
 	//We add decoration
-	if(RandomHelper::random_int(1, 3) == 1) {
-		p->AddDecorations();
-	}
 
 	//Get a position being x random in screen and y random inside a certain margin so we can always reach
 	float randX = RandomHelper::random_real((p->getContentSize().width/2), (visibleSize.width - p->getContentSize().width/2));

@@ -64,7 +64,6 @@ public:
     void initOptions();
 
     //Add decorations to ths platform if suitable
-    void AddDecorations();
 
     //Iv platform is broen on steping will break and fall down
     void PlatformBroke();

@@ -13,53 +13,9 @@ Platform* Platform::create(type t, size s, state st)
     Platform *pSprite = new Platform();
 
     //Build the sprite name
-    std::string _sprite = "ground_";
-    //Type
-    switch (t) {
-        case type::cake:
-            _sprite += "cake";
-            break;
-        case type::grass:
-            _sprite += "grass";
-            break;
-        case type::sand:
-            _sprite = "sand";
-            break;
-        case type::snow:
-            _sprite += "snow";
-            break;
-        case type::stone:
-            _sprite += "stone";
-            break;
-        case type::wood:
-            _sprite += "wood";
-            break;
-        default:
-            _sprite = "grass";
-            break;
-    }
-
-    //Size
-    switch (s) {
-        case size::smalll:
-            _sprite += "_small";
-            break;
-        case size::normal:
-            //No add something just leave it
-        default:
-            break;
-    }
+    std::string _sprite = "Thunderous-Rock-Sprite";
 
     //State (Broken or not broken)
-    switch (st) {
-        case state::broken:
-            _sprite += "_broken";
-            break;
-        case state::normal:
-            //No add anything just leave
-        default:
-            break;
-    }
 
     //Ad png format at the end
     _sprite += ".png";
@@ -135,95 +91,9 @@ bool Platform::isBroken() {
 
 #pragma mark - Platform Addons
 //This method will basically add some decoration into the platform (grass , cactus, mushrooms,...)
-void Platform::AddDecorations() {
-    CCLOG("Size %d",static_cast<int>(_size));
-    //Depending on the type and size we will add one or more things
-    if(_size == size::smalll) {
-        //We should only add one object
-        if(_type == type::grass) {
-            //Decoration can be grass only or a mushroom
-            if(RandomHelper::random_int(1, 2) == 1) {
-                //Grass
-                char msg[256] = {0};
-                sprintf(msg, "grass%d.png", RandomHelper::random_int(1, 2));
-                auto decor = Sprite::createWithSpriteFrameName(msg);
-                decor->setAnchorPoint(Vec2(0.5, 0));
-                decor->setPosition(Vec2(RandomHelper::random_real( 0+decor->getContentSize().width, this->getContentSize().width-decor->getContentSize().width),this->getContentSize().height));
-                this->addChild(decor,1);
-            } else {
-                //Mushrooms
-                if(RandomHelper::random_int(1, 2) == 1) {
-                    //Red Mushroom
-                    auto decor = Sprite::createWithSpriteFrameName("mushroom_red.png");
-                    decor->setAnchorPoint(Vec2(0.5, 0));
-                    decor->setPosition(Vec2(RandomHelper::random_real( 0+decor->getContentSize().width, this->getContentSize().width-decor->getContentSize().width),this->getContentSize().height));
-                    this->addChild(decor,1);
-                } else {
-                    //Red Mushroom
-                    auto decor = Sprite::createWithSpriteFrameName("mushroom_brown.png");
-                    decor->setAnchorPoint(Vec2(0.5, 0));
-                    decor->setPosition(Vec2(RandomHelper::random_real( 0+decor->getContentSize().width, this->getContentSize().width-decor->getContentSize().width),this->getContentSize().height));
-                    this->addChild(decor,1);
-                }
-            }
-        } else if(_type == type::sand) {
-            if(RandomHelper::random_int(1, 2) == 1) {
-                //Grass
-                char msg[256] = {0};
-                sprintf(msg, "grass_brown%d.png", RandomHelper::random_int(1, 2));
-                auto decor = Sprite::createWithSpriteFrameName(msg);
-                decor->setAnchorPoint(Vec2(0.5, 0));
-                decor->setPosition(Vec2(RandomHelper::random_real( 0+decor->getContentSize().width, this->getContentSize().width-decor->getContentSize().width),this->getContentSize().height));
-                this->addChild(decor,1);
-            }
-        }
-    } else {
-        //We can add anything and even more than one. We will do groupsof predefined things to add but position will be random.
-        if(_type == type::grass) {
-            //Decoration can be grass only or a mushroom
-            if(RandomHelper::random_int(1, 2) == 1) {
-                //Grass Normal (Green)
-                char msg[256] = {0};
-                sprintf(msg, "grass%d.png", RandomHelper::random_int(1, 2));
-                auto decor = Sprite::createWithSpriteFrameName(msg);
-                decor->setAnchorPoint(Vec2(0.5, 0));
-                decor->setPosition(Vec2(RandomHelper::random_real( 0+decor->getContentSize().width, this->getContentSize().width-decor->getContentSize().width),this->getContentSize().height));
-                this->addChild(decor,1);
-            } else {
-                //Mushrooms
-                if(RandomHelper::random_int(1, 2) == 1) {
-                    //Red Mushroom
-                    auto decor = Sprite::createWithSpriteFrameName("mushroom_red.png");
-                    decor->setAnchorPoint(Vec2(0.5, 0));
-                    decor->setPosition(Vec2(RandomHelper::random_real( 0+decor->getContentSize().width, this->getContentSize().width-decor->getContentSize().width),this->getContentSize().height));
-                    this->addChild(decor,1);
-                } else {
-                    //Red Mushroom
-                    auto decor = Sprite::createWithSpriteFrameName("mushroom_brown.png");
-                    decor->setAnchorPoint(Vec2(0.5, 0));
-                    decor->setPosition(Vec2(RandomHelper::random_real( 0+decor->getContentSize().width, this->getContentSize().width-decor->getContentSize().width),this->getContentSize().height));
-                    this->addChild(decor,1);
-                }
-            }
-        } else if(_type == type::sand) {
-            if(RandomHelper::random_int(1, 2) == 1) {
-                //Grass Brown
-                char msg[256] = {0};
-                sprintf(msg, "grass_brown%d.png", RandomHelper::random_int(1, 2));
-                auto decor = Sprite::createWithSpriteFrameName(msg);
-                decor->setAnchorPoint(Vec2(0.5, 0));
-                decor->setPosition(Vec2(RandomHelper::random_real( 0+decor->getContentSize().width, this->getContentSize().width-decor->getContentSize().width),this->getContentSize().height));
-                this->addChild(decor,1);
-            } else {
-                //Cactus
-                auto decor = Sprite::createWithSpriteFrameName("cactus.png");
-                decor->setAnchorPoint(Vec2(0.5, 0));
-                decor->setPosition(Vec2(RandomHelper::random_real( 0+decor->getContentSize().width, this->getContentSize().width-decor->getContentSize().width),this->getContentSize().height));
-                this->addChild(decor,1);
-            }
-        }
-    }
-}
+
+
+
 
 void Platform::AddSpikes() {
 

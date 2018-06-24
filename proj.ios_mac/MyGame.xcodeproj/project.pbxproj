@@ -54,6 +54,8 @@
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
 		D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B0611A1803AB670077942B /* CoreMotion.framework */; };
+		E421282C20E03F2B002D994D /* SplashScreen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E421282920E03F28002D994D /* SplashScreen.cpp */; };
+		E421282D20E03F2B002D994D /* SplashScreen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E421282920E03F28002D994D /* SplashScreen.cpp */; };
 		E446F27F20CD2F2A00EAD349 /* GameSingleton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E446F27020CD2F2700EAD349 /* GameSingleton.cpp */; };
 		E446F28020CD2F2A00EAD349 /* GameSingleton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E446F27020CD2F2700EAD349 /* GameSingleton.cpp */; };
 		E446F28120CD2F2A00EAD349 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E446F27120CD2F2700EAD349 /* AppDelegate.cpp */; };
@@ -283,6 +285,8 @@
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D6B0611A1803AB670077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
+		E421282920E03F28002D994D /* SplashScreen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SplashScreen.cpp; sourceTree = "<group>"; };
+		E421282B20E03F2A002D994D /* SplashScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashScreen.h; sourceTree = "<group>"; };
 		E446F26E20CD2F2700EAD349 /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldScene.h; sourceTree = "<group>"; };
 		E446F26F20CD2F2700EAD349 /* Platform.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Platform.hpp; sourceTree = "<group>"; };
 		E446F27020CD2F2700EAD349 /* GameSingleton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameSingleton.cpp; sourceTree = "<group>"; };
@@ -568,6 +572,8 @@
 				E446F27420CD2F2800EAD349 /* HelloWorldScene.cpp */,
 				E446F26E20CD2F2700EAD349 /* HelloWorldScene.h */,
 				E446F27920CD2F2900EAD349 /* MainScene.cpp */,
+				E421282920E03F28002D994D /* SplashScreen.cpp */,
+				E421282B20E03F2A002D994D /* SplashScreen.h */,
 				E446F27C20CD2F2900EAD349 /* MainScene.h */,
 				E446F27220CD2F2700EAD349 /* Platform.cpp */,
 				E446F26F20CD2F2700EAD349 /* Platform.hpp */,
@@ -885,6 +891,7 @@
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				E446F28B20CD2F2A00EAD349 /* GameOverScene.cpp in Sources */,
+				E421282C20E03F2B002D994D /* SplashScreen.cpp in Sources */,
 				E446F28520CD2F2A00EAD349 /* Character.cpp in Sources */,
 				E446F28120CD2F2A00EAD349 /* AppDelegate.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
@@ -903,6 +910,7 @@
 				E446F28020CD2F2A00EAD349 /* GameSingleton.cpp in Sources */,
 				E446F28820CD2F2A00EAD349 /* HelloWorldScene.cpp in Sources */,
 				E446F28420CD2F2A00EAD349 /* Platform.cpp in Sources */,
+				E421282D20E03F2B002D994D /* SplashScreen.cpp in Sources */,
 				E446F28A20CD2F2A00EAD349 /* GameScene.cpp in Sources */,
 				E446F28E20CD2F2A00EAD349 /* MainScene.cpp in Sources */,
 				E446F28620CD2F2A00EAD349 /* Character.cpp in Sources */,
@@ -933,6 +941,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -952,6 +961,7 @@
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = InfGreanTeamProject;
 				SDKROOT = iphoneos;
 				STRIP_PNG_TEXT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -966,6 +976,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -984,6 +995,7 @@
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = InfGreanTeamProject;
 				SDKROOT = iphoneos;
 				STRIP_PNG_TEXT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
